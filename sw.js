@@ -3,10 +3,10 @@ const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.json',
-  './css/styles.css',
-  './js/store.js',
-  './js/calendar.js',
-  './js/app.js'
+  './styles.css',
+  './store.js',
+  './calendar.js',
+  './app.js'
 ];
 
 self.addEventListener('install', (event) => {
