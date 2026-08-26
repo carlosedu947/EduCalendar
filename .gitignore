@@ -1,0 +1,9 @@
+# Arquivos temporários e caches
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.log
+
+# Backups locais de teste
+*.tmp

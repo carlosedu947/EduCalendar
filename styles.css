@@ -1,0 +1,135 @@
+/* EduCalendar Custom Styles & Mobile Enhancements */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  padding-top: var(--sat);
+  padding-bottom: var(--sab);
+}
+
+/* Custom Inputs */
+.form-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid #E2E8F0;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  font-size: 0.875rem;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+}
+
+.dark .form-input {
+  background-color: #0F172A;
+  border-color: #334155;
+  color: #F8FAFC;
+}
+
+.form-input:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+/* Modal Bottom Sheet on Mobile & Floating Dialog on Desktop */
+#generic-modal .modal-card {
+  animation: modalSheetIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile Bottom Navigation Bar */
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: #64748B;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.75rem;
+}
+
+.bottom-nav-item.active {
+  color: #4F46E5;
+}
+
+.dark .bottom-nav-item.active {
+  color: #818CF8;
+}
+
+/* Floating Action Button (FAB) */
+.fab-btn {
+  box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4), 0 8px 10px -6px rgba(79, 70, 229, 0.2);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  #sidebar, #mobile-header, #bottom-nav, #mobile-fab, #calendar-filter-bar, .no-print, button, #toast-container {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .calendar-month-grid {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+
+  .tab-content {
+    display: block !important;
+  }
+
+  .tab-content.hidden {
+    display: none !important;
+  }
+}
